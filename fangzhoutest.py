@@ -26,20 +26,22 @@ client = OpenAI(
 # 修正为标准的 OpenAI Chat 格式
 response = call_model_with_retry(
     client,
-    model="ep-20260212190221-rdt4x",
+    # 使用 test.py 中验证过的可用模型 ID (原 ID ep-20260212190221-rdt4x 报 403 权限错误)
+    model="ep-20251229164935-7mw76",
     messages=[
         {
             "role": "user",
             "content": [
-                {
-                    "type": "image_url",
-                    "image_url": {
-                        "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/ark_demo_img_1.png"
-                    }
-                },
+                # {
+                #     "type": "image_url",
+                #     "image_url": {
+                #         "url": "https://ark-project.tos-cn-beijing.volces.com/doc_image/ark_demo_img_1.png"
+                #     }
+                # },
                 {
                     "type": "text",
-                    "text": "你看见了什么？"
+                    # "text": "你看见了什么？"
+                    "text": "你好，请自我介绍。"
                 },
             ],
         }
